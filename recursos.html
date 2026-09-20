@@ -7,46 +7,38 @@
 <meta name="description" content="Directorio de organizaciones, portales, blogs y herramientas sobre autismo (TEA) en español, con recursos de Uruguay, España y Chile.">
 <link rel="canonical" href="https://avvedit-creator.github.io/autismo-recursos/recursos.html">
 <meta name="robots" content="index,follow">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="es_UY">
-<meta property="og:title" content="Webs y recursos sobre autismo en español">
-<meta property="og:url" content="https://avvedit-creator.github.io/autismo-recursos/recursos.html">
-<style>
-:root{--bg:#fbfaf7;--fg:#1f2933;--muted:#5b6770;--card:#fff;--line:#e4e1d8;--accent:#2a6f97;--accent-bg:#e6f0f6}
-@media (prefers-color-scheme:dark){:root{--bg:#161a1d;--fg:#e6e9ec;--muted:#9aa5ae;--card:#1f2428;--line:#2e353b;--accent:#7fb8dc;--accent-bg:#1d2b35}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-main{max-width:920px;margin:0 auto;padding:32px 16px 56px}
-h1{font-size:2rem;margin:0 0 8px}
-.lead{color:var(--muted);margin:0 0 24px}
-input{width:100%;padding:12px 14px;font:inherit;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg)}
-h2{font-size:1.25rem;margin:36px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line)}
-.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-.card a{color:var(--accent);font-weight:600;text-decoration:none}
-.card a:hover,.card a:focus{text-decoration:underline}
-.card p{margin:6px 0 8px;font-size:.95rem}
-.tag{display:inline-block;font-size:.75rem;background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:99px}
-footer{margin-top:40px;color:var(--muted);font-size:.9rem}
-[hidden]{display:none!important}
-</style>
+<meta name="theme-color" content="#0b3a75">
+<meta name="geo.region" content="UY-MA">
+<meta name="geo.placename" content="Maldonado, Uruguay">
 <link rel="icon" type="image/png" href="img/favicon-64.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_UY">
+<meta property="og:site_name" content="Ceautismo Padres Maldonado">
+<meta property="og:title" content="Webs y recursos sobre autismo en español | Ceautismo">
+<meta property="og:description" content="Directorio de organizaciones, portales, blogs y herramientas sobre autismo (TEA) en español, con recursos de Uruguay, España y Chile.">
+<meta property="og:url" content="https://avvedit-creator.github.io/autismo-recursos/recursos.html">
+<meta property="og:image" content="https://avvedit-creator.github.io/autismo-recursos/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://avvedit-creator.github.io/autismo-recursos/img/og-image.png">
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-<main>
-<p><a href="./">← Volver al inicio</a></p>
-<h1>Webs y recursos sobre autismo en español</h1>
-<p class="lead">Selección de portales, organizaciones, blogs y herramientas sobre el trastorno del espectro del autismo (TEA) para familias, personas autistas y profesionales.</p>
+<div class="util"><div class="in"><span>Grupo de familias · Maldonado, Uruguay</span><a href="https://wa.me/59899611030" rel="noopener">WhatsApp 099 611 030</a></div></div>
+<header class="top"><nav aria-label="Principal">
+<a class="logo" href="./"><img src="img/logo.png" width="146" height="179" alt="Ceautismo, Padres Maldonado, Punta del Este, Uruguay"></a>
+<a href="autismo.html">Autismo</a><a href="familias.html">Familias</a><a href="el-grupo.html">El grupo</a><a href="colabora.html">Colabora</a><a href="contacto.html">Contacto</a><a id="nav-donar" class="nav-cta" href="colabora.html#donar" hidden>Donar</a>
+</nav></header>
+<div class="page-hero"><div class="in"><h1>Webs y recursos sobre autismo en español</h1><p>Una selección de fuentes de referencia.</p></div></div>
+<main class="wrap wide">
+<p>Organizaciones, portales, blogs y herramientas sobre autismo en español, para familias, personas autistas y profesionales.</p>
 <input id="q" type="search" placeholder="Buscar (ej. comunicación, Chile, blog, pictogramas)…" aria-label="Buscar">
-
 <div id="list"></div>
-
-<footer>
-<p>Enlaces comprobados en septiembre de 2026. Esta selección es orientativa y no sustituye el consejo de profesionales sanitarios. ¿Falta alguna web? Sugerila abriendo un <em>issue</em> en el repositorio.</p>
-</footer>
+<p class="note">Enlaces comprobados en septiembre de 2026. Esta selección es orientativa y no sustituye el consejo de profesionales sanitarios. ¿Falta alguna web? Escribinos desde la página de <a href="contacto.html">contacto</a>.</p>
 </main>
-
 <script>
 const data=[
 {t:"Organizaciones y entidades de referencia",items:[
@@ -82,5 +74,24 @@ q.addEventListener('input',()=>{const v=q.value.toLowerCase().trim();
 document.querySelectorAll('.card').forEach(c=>c.hidden=v&&!c.dataset.s.includes(v));
 document.querySelectorAll('section').forEach(s=>s.hidden=!s.querySelector('.card:not([hidden])'));});
 </script>
+
+<footer class="site"><div class="in">
+<div><h3>Ceautismo · Padres Maldonado</h3>
+<p>Grupo de familias de Maldonado y Punta del Este, Uruguay. Contenido informativo: no sustituye la valoración de profesionales sanitarios, educativos o legales.</p>
+<p class="social"><a href="https://www.instagram.com/ceautismo/" rel="noopener">Instagram @ceautismo</a><br><a href="https://wa.me/59899611030" rel="noopener">WhatsApp 099 611 030</a></p></div>
+<div><h3>Autismo</h3><ul class="flist">
+<li><a href="autismo.html#que-es">Qué es el autismo</a></li>
+<li><a href="autismo.html#senales">Señales</a></li>
+<li><a href="autismo.html#diagnostico">Diagnóstico</a></li>
+<li><a href="autismo.html#comunicacion">Comunicación</a></li>
+<li><a href="familias.html#preguntas">Preguntas frecuentes</a></li></ul></div>
+<div><h3>El grupo</h3><ul class="flist">
+<li><a href="el-grupo.html">Quiénes somos</a></li>
+<li><a href="colabora.html">Colabora</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+<li><a href="recursos.html">Recursos y webs</a></li>
+<li><a href="privacidad.html">Privacidad</a></li></ul></div>
+</div></footer>
+<script src="js/donar.js"></script>
 </body>
 </html>
