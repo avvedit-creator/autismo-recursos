@@ -27,6 +27,8 @@
     });
     el.appendChild(btn);
 
+    // Arranque directo si ya está a la vista; el observador lo pausa/reanuda al hacer scroll.
+    if (el.getBoundingClientRect().top < window.innerHeight) v.play().catch(noop);
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
