@@ -15,24 +15,11 @@
     v.addEventListener('playing', function () { v.classList.add('on'); });
     el.insertBefore(v, el.firstChild);
 
-    var paused = false;
-    var btn = document.createElement('button');
-    btn.type = 'button'; btn.className = 'vbtn';
-    btn.textContent = 'Pausar video';
-    btn.setAttribute('aria-label', 'Pausar o reproducir el video de fondo');
-    btn.addEventListener('click', function () {
-      paused = !paused;
-      if (paused) { v.pause(); btn.textContent = 'Reproducir video'; }
-      else { v.play().catch(noop); btn.textContent = 'Pausar video'; }
-    });
-    el.appendChild(btn);
-
     // Arranque directo si ya está a la vista; el observador lo pausa/reanuda al hacer scroll.
     if (el.getBoundingClientRect().top < window.innerHeight) v.play().catch(noop);
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
-          if (paused) return;
           if (e.isIntersecting) v.play().catch(noop); else v.pause();
         });
       }).observe(el);
