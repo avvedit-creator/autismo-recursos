@@ -105,13 +105,16 @@ footer.site h3{margin:0 0 6px;font-size:1rem}
 :focus-visible{outline:3px solid var(--cta);outline-offset:2px}
 @media (max-width:700px){nav{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;gap:18px;-webkit-overflow-scrolling:touch}.logo{margin-right:8px;flex:none}nav a{flex:none}}
 @media (max-width:560px){.hero h1{font-size:2.1rem}body{font-size:17px}.hero{padding:44px 16px 64px}}
+.donate{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:28px;margin:8px 0 0}
+.donate h2{margin-top:0}
+.donate small{display:block;margin-top:10px;color:var(--muted);font-size:.85rem}
 </style>
 </head>
 <body>
 <div class="util"><div class="in"><span>Grupo de familias · Maldonado, Uruguay</span><a href="https://wa.me/59899611030" rel="noopener">WhatsApp 099 611 030</a></div></div>
 <header class="top"><nav aria-label="Principal">
 <a class="logo" href="./">Ceautismo<small>Maldonado · Uruguay</small></a>
-<a href="#nosotros">Quiénes somos</a><a href="#que-es">Qué es</a><a href="#senales">Señales</a><a href="#diagnostico">Diagnóstico</a><a href="#familias">Familias</a><a href="#educacion">Educación</a><a href="#preguntas">Preguntas</a><a href="#uruguay">Uruguay</a><a href="#contacto">Contacto</a><a href="recursos.html">Recursos</a>
+<a href="#nosotros">Quiénes somos</a><a href="#que-es">Qué es</a><a href="#senales">Señales</a><a href="#diagnostico">Diagnóstico</a><a href="#familias">Familias</a><a href="#educacion">Educación</a><a href="#preguntas">Preguntas</a><a href="#uruguay">Uruguay</a><a id="nav-donar" href="#donar" hidden>Donar</a><a href="#contacto">Contacto</a><a href="recursos.html">Recursos</a>
 </nav></header>
 
 <div class="hero"><div class="in">
@@ -274,6 +277,15 @@ footer.site h3{margin:0 0 6px;font-size:1rem}
 <div class="note">Esta información es orientativa y puede estar desactualizada. Confirmá los requisitos y trámites en los organismos indicados o con nuestro grupo.</div>
 </section>
 
+<section id="donar" hidden>
+<div class="donate">
+<h2>Sumá tu aporte</h2>
+<p>Tu donación ayuda a sostener las actividades del grupo y a que más familias de Maldonado se sientan acompañadas.</p>
+<a class="btn" id="donar-btn" href="#donar" rel="noopener noreferrer" target="_blank">Donar con PayPal</a>
+<small>Las donaciones son voluntarias y se procesan en PayPal. Esta web no guarda datos de pago.</small>
+</div>
+</section>
+
 <section id="contacto">
 <div class="contact-box">
 <h2>Contacto</h2>
@@ -301,5 +313,28 @@ footer.site h3{margin:0 0 6px;font-size:1rem}
 <div><h3>Contacto</h3><p><a href="https://wa.me/59899611030" rel="noopener">WhatsApp 099 611 030</a><br><a href="https://www.instagram.com/ceautismo/" rel="noopener">Instagram @ceautismo</a></p></div>
 <div><h3>Más información</h3><p><a href="recursos.html">Directorio de webs sobre autismo</a><br>Sin vinculación con las organizaciones enlazadas.</p></div>
 </div></footer>
+<script>
+/* CONFIGURACIÓN DE DONACIONES
+   Completar UNA de las dos opciones cuando exista la cuenta de PayPal.
+   - paypalMe: el nombre de usuario de PayPal.Me, ej. "Ceautismo"  -> https://www.paypal.me/Ceautismo
+   - hostedButtonId: el ID del botón "Donar" creado en PayPal      -> https://www.paypal.com/donate/?hosted_button_id=...
+   Mientras ambos estén vacíos, la sección de donaciones permanece oculta. */
+var DONACIONES = { paypalMe: "", hostedButtonId: "" };
+
+function initDonar(cfg) {
+  var url = "";
+  if (/^[A-Za-z0-9]{2,60}$/.test(cfg.hostedButtonId || "")) {
+    url = "https://www.paypal.com/donate/?hosted_button_id=" + cfg.hostedButtonId;
+  } else if (/^[A-Za-z0-9]{2,20}$/.test(cfg.paypalMe || "")) {
+    url = "https://www.paypal.me/" + cfg.paypalMe;
+  }
+  var sec = document.getElementById("donar"), nav = document.getElementById("nav-donar"), btn = document.getElementById("donar-btn");
+  if (!sec || !nav || !btn) return false;
+  sec.hidden = nav.hidden = !url;
+  if (url) btn.href = url;
+  return !!url;
+}
+initDonar(DONACIONES);
+</script>
 </body>
 </html>
