@@ -6,47 +6,74 @@
 <title>Ceautismo Maldonado</title>
 <meta name="description" content="Ceautismo: grupo de familias de Maldonado, Uruguay. Guía sobre autismo (TEA): qué es, señales, diagnóstico, apoyo a familias, educación, vida adulta y comunicación.">
 <style>
-:root{--bg:#fbfaf7;--fg:#1f2933;--muted:#5b6770;--card:#fff;--line:#e4e1d8;--accent:#2a6f97;--accent-bg:#e6f0f6;--hero:#e6f0f6}
-@media (prefers-color-scheme:dark){:root{--bg:#161a1d;--fg:#e6e9ec;--muted:#9aa5ae;--card:#1f2428;--line:#2e353b;--accent:#7fb8dc;--accent-bg:#1d2b35;--hero:#1d2b35}}
+:root{--bg:#ffffff;--fg:#1c2b33;--muted:#4d5f69;--card:#f3f7f8;--line:#d9e3e7;--brand:#0f4c5c;--brand-fg:#ffffff;--link:#0b5f74;--cta:#f4b942;--cta-fg:#1c2b33;--soft:#e4f1f3}
+@media (prefers-color-scheme:dark){:root{--bg:#10191d;--fg:#e8eef0;--muted:#a3b3ba;--card:#182329;--line:#2a3a42;--brand:#0a3541;--brand-fg:#ffffff;--link:#7cc4d6;--cta:#f4b942;--cta-fg:#1c2b33;--soft:#16323b}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-a{color:var(--accent)}
-header.top{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
-nav{max-width:980px;margin:0 auto;padding:10px 16px;display:flex;gap:6px 16px;flex-wrap:wrap;align-items:center;font-size:.95rem}
-nav strong{margin-right:auto}
-nav a{text-decoration:none;font-weight:500}
-nav a:hover{text-decoration:underline}
-.hero{background:var(--hero);padding:56px 16px 48px}
+a{color:var(--link)}
+.util{background:var(--brand);color:var(--brand-fg);font-size:.88rem}
+.util .in{max-width:1040px;margin:0 auto;padding:8px 16px;display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap}
+.util a{color:var(--brand-fg);font-weight:600}
+header.top{position:sticky;top:0;background:var(--bg);border-bottom:3px solid var(--cta);z-index:5}
+nav{max-width:1040px;margin:0 auto;padding:12px 16px;display:flex;gap:8px 18px;flex-wrap:wrap;align-items:center;font-size:.95rem}
+.logo{margin-right:auto;font-weight:800;font-size:1.35rem;color:var(--brand);text-decoration:none;letter-spacing:-.01em}
+@media (prefers-color-scheme:dark){.logo{color:var(--fg)}}
+.logo small{display:block;font-size:.7rem;font-weight:600;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+nav a:not(.logo){text-decoration:none;font-weight:600;color:var(--fg);padding:4px 0;border-bottom:2px solid transparent}
+nav a:not(.logo):hover{border-bottom-color:var(--cta)}
+.hero{background:var(--brand);color:var(--brand-fg);padding:64px 16px 72px}
+.hero .in{max-width:1040px;margin:0 auto}
+.hero h1{font-size:2.8rem;line-height:1.15;margin:0 0 16px;max-width:16ch}
+.hero p{font-size:1.25rem;margin:0 0 26px;max-width:46ch;opacity:.95}
+.btn{display:inline-block;background:var(--cta);color:var(--cta-fg);padding:14px 24px;border-radius:6px;text-decoration:none;font-weight:700;margin:0 10px 10px 0}
+.btn:hover{filter:brightness(.95)}
+.btn.alt{background:transparent;color:var(--brand-fg);border:2px solid var(--brand-fg)}
+.tiles{max-width:1040px;margin:-36px auto 0;padding:0 16px;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));position:relative}
+.tile{background:var(--bg);border:1px solid var(--line);border-top:5px solid var(--cta);border-radius:8px;padding:18px;text-decoration:none;color:var(--fg);box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.tile strong{display:block;font-size:1.1rem;color:var(--link);margin-bottom:4px}
+.tile span{font-size:.95rem;color:var(--muted)}
+.tile:hover{transform:translateY(-2px)}
 .wrap{max-width:820px;margin:0 auto;padding:0 16px}
-.hero .wrap{padding:0}
-h1{font-size:2.4rem;line-height:1.2;margin:0 0 12px}
-.hero p{font-size:1.2rem;color:var(--muted);margin:0 0 20px}
-.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:600}
-section{padding:40px 0 8px}
-h2{font-size:1.7rem;margin:0 0 12px;line-height:1.25}
+section{padding:44px 0 8px}
+h2{font-size:1.85rem;margin:0 0 14px;line-height:1.25;color:var(--brand)}
+@media (prefers-color-scheme:dark){h2{color:var(--fg)}}
 h3{font-size:1.15rem;margin:22px 0 6px}
 ul{padding-left:22px}li{margin:4px 0}
-.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:14px 16px;margin:20px 0;font-size:.98rem}
-.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:16px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.98rem}
-.card h3{margin:0 0 6px;font-size:1.05rem}
-footer{margin-top:56px;border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);font-size:.9rem}
-:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-@media (max-width:560px){h1{font-size:1.9rem}body{font-size:17px}}
+.note{background:var(--soft);border-left:5px solid var(--brand);border-radius:6px;padding:14px 16px;margin:20px 0;font-size:.98rem}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:16px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;font-size:.98rem}
+.card h3{margin:0 0 6px;font-size:1.05rem;color:var(--link)}
+.contact-box{background:var(--brand);color:var(--brand-fg);border-radius:10px;padding:28px;margin:8px 0 0}
+.contact-box h2{color:var(--brand-fg);margin-top:0}
+.contact-box a:not(.btn){color:var(--brand-fg)}
+footer.site{margin-top:64px;background:var(--brand);color:var(--brand-fg);padding:36px 16px;font-size:.92rem}
+footer.site .in{max-width:1040px;margin:0 auto;display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+footer.site a{color:var(--brand-fg)}
+footer.site h3{margin:0 0 6px;font-size:1rem}
+:focus-visible{outline:3px solid var(--cta);outline-offset:2px}
+@media (max-width:560px){.hero h1{font-size:2.1rem}body{font-size:17px}.hero{padding:44px 16px 64px}}
 </style>
 </head>
 <body>
+<div class="util"><div class="in"><span>Grupo de familias · Maldonado, Uruguay</span><a href="https://wa.me/59899611030" rel="noopener">WhatsApp 099 611 030</a></div></div>
 <header class="top"><nav aria-label="Principal">
-<strong>Ceautismo · Maldonado</strong>
-<a href="#nosotros">Quiénes somos</a><a href="#que-es">Qué es</a><a href="#senales">Señales</a><a href="#diagnostico">Diagnóstico</a><a href="#familias">Familias</a><a href="#educacion">Educación</a><a href="#adultos">Vida adulta</a><a href="#comunicacion">Comunicación</a><a href="#uruguay">Uruguay</a><a href="recursos.html">Recursos</a>
+<a class="logo" href="./">Ceautismo<small>Maldonado · Uruguay</small></a>
+<a href="#nosotros">Quiénes somos</a><a href="#que-es">Qué es</a><a href="#senales">Señales</a><a href="#diagnostico">Diagnóstico</a><a href="#familias">Familias</a><a href="#educacion">Educación</a><a href="#uruguay">Uruguay</a><a href="#contacto">Contacto</a><a href="recursos.html">Recursos</a>
 </nav></header>
 
-<div class="hero"><div class="wrap">
+<div class="hero"><div class="in">
 <h1>Familias que se acompañan</h1>
 <p>Somos un grupo de familias de Maldonado, Uruguay. Compartimos información, experiencias y apoyo sobre el trastorno del espectro del autismo (TEA).</p>
-<a class="btn" href="#nosotros">Conocer al grupo</a>
+<a class="btn" href="#contacto">Contactanos</a><a class="btn alt" href="#que-es">Qué es el autismo</a>
 </div></div>
+
+<div class="tiles">
+<a class="tile" href="#senales"><strong>Señales</strong><span>Qué observar en cada edad</span></a>
+<a class="tile" href="#diagnostico"><strong>Diagnóstico</strong><span>Cómo se llega y a quién consultar</span></a>
+<a class="tile" href="#familias"><strong>Para familias</strong><span>Primeros pasos y apoyo</span></a>
+<a class="tile" href="#educacion"><strong>Educación</strong><span>Apoyos en la escuela</span></a>
+</div>
 
 <main class="wrap">
 
@@ -175,6 +202,15 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding:24px 0 48px;colo
 <div class="note">Esta información es orientativa y puede estar desactualizada. Confirmá los requisitos y trámites en los organismos indicados o con nuestro grupo.</div>
 </section>
 
+<section id="contacto">
+<div class="contact-box">
+<h2>Contacto</h2>
+<p>Si sos familia, docente o profesional de Maldonado y querés sumarte o consultar algo, escribinos.</p>
+<a class="btn" href="https://wa.me/59899611030" rel="noopener">WhatsApp 099 611 030</a>
+<a class="btn alt" href="https://www.instagram.com/ceautismo/" rel="noopener">Instagram @ceautismo</a>
+</div>
+</section>
+
 <section id="fuentes">
 <h2>Fuentes de referencia</h2>
 <p>Esta guía es divulgativa y está escrita con carácter orientativo. Para profundizar, consulta:</p>
@@ -188,8 +224,10 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding:24px 0 48px;colo
 
 </main>
 
-<div class="wrap"><footer>
-<p>Contenido original de carácter informativo. No sustituye la valoración de profesionales sanitarios, educativos o legales. Ceautismo · Maldonado, Uruguay. Sin vinculación con las organizaciones enlazadas.</p>
-</footer></div>
+<footer class="site"><div class="in">
+<div><h3>Ceautismo · Maldonado, Uruguay</h3><p>Grupo de familias. Contenido informativo: no sustituye la valoración de profesionales sanitarios, educativos o legales.</p></div>
+<div><h3>Contacto</h3><p><a href="https://wa.me/59899611030" rel="noopener">WhatsApp 099 611 030</a><br><a href="https://www.instagram.com/ceautismo/" rel="noopener">Instagram @ceautismo</a></p></div>
+<div><h3>Más información</h3><p><a href="recursos.html">Directorio de webs sobre autismo</a><br>Sin vinculación con las organizaciones enlazadas.</p></div>
+</div></footer>
 </body>
 </html>
