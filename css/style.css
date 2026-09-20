@@ -64,7 +64,8 @@ footer.site .social{margin-top:10px}
 .bigcard a.more{font-weight:700;text-decoration:none}
 .bigcard a.more:hover{text-decoration:underline}
 .wide{max-width:1040px}
-.has-video{position:relative;overflow:hidden;background-size:cover;background-position:center}
+.has-video{position:relative;overflow:hidden;isolation:isolate;background-size:cover;background-position:center}
+.tiles{z-index:5}
 .has-video[data-vid="a"]{background-image:url(../video/a.jpg)}
 .has-video[data-vid="b"]{background-image:url(../video/b.jpg)}
 .has-video[data-vid="c"]{background-image:url(../video/c.jpg)}
