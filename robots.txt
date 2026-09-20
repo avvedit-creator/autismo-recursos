@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://avvedit-creator.github.io/autismo-recursos/sitemap.xml
