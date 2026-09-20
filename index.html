@@ -3,75 +3,170 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Webs sobre autismo en español</title>
-<meta name="description" content="Selección de las mejores webs sobre autismo (TEA) en español: organizaciones, información, comunicación aumentativa, blogs y recursos para familias y profesionales.">
+<title>Guía sobre autismo en español</title>
+<meta name="description" content="Guía divulgativa en español sobre el autismo (TEA): qué es, señales, diagnóstico, apoyo a familias, educación, vida adulta y comunicación, con enlaces a fuentes de referencia.">
 <style>
-:root{--bg:#fbfaf7;--fg:#1f2933;--muted:#5b6770;--card:#fff;--line:#e4e1d8;--accent:#2a6f97;--accent-bg:#e6f0f6}
-@media (prefers-color-scheme:dark){:root{--bg:#161a1d;--fg:#e6e9ec;--muted:#9aa5ae;--card:#1f2428;--line:#2e353b;--accent:#7fb8dc;--accent-bg:#1d2b35}}
+:root{--bg:#fbfaf7;--fg:#1f2933;--muted:#5b6770;--card:#fff;--line:#e4e1d8;--accent:#2a6f97;--accent-bg:#e6f0f6;--hero:#e6f0f6}
+@media (prefers-color-scheme:dark){:root{--bg:#161a1d;--fg:#e6e9ec;--muted:#9aa5ae;--card:#1f2428;--line:#2e353b;--accent:#7fb8dc;--accent-bg:#1d2b35;--hero:#1d2b35}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-main{max-width:920px;margin:0 auto;padding:32px 16px 56px}
-h1{font-size:2rem;margin:0 0 8px}
-.lead{color:var(--muted);margin:0 0 24px}
-input{width:100%;padding:12px 14px;font:inherit;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg)}
-h2{font-size:1.25rem;margin:36px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line)}
-.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-.card a{color:var(--accent);font-weight:600;text-decoration:none}
-.card a:hover,.card a:focus{text-decoration:underline}
-.card p{margin:6px 0 8px;font-size:.95rem}
-.tag{display:inline-block;font-size:.75rem;background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:99px}
-footer{margin-top:40px;color:var(--muted);font-size:.9rem}
-[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--accent)}
+header.top{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav{max-width:980px;margin:0 auto;padding:10px 16px;display:flex;gap:6px 16px;flex-wrap:wrap;align-items:center;font-size:.95rem}
+nav strong{margin-right:auto}
+nav a{text-decoration:none;font-weight:500}
+nav a:hover{text-decoration:underline}
+.hero{background:var(--hero);padding:56px 16px 48px}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+.hero .wrap{padding:0}
+h1{font-size:2.4rem;line-height:1.2;margin:0 0 12px}
+.hero p{font-size:1.2rem;color:var(--muted);margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:600}
+section{padding:40px 0 8px}
+h2{font-size:1.7rem;margin:0 0 12px;line-height:1.25}
+h3{font-size:1.15rem;margin:22px 0 6px}
+ul{padding-left:22px}li{margin:4px 0}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:14px 16px;margin:20px 0;font-size:.98rem}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:16px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.98rem}
+.card h3{margin:0 0 6px;font-size:1.05rem}
+footer{margin-top:56px;border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);font-size:.9rem}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media (max-width:560px){h1{font-size:1.9rem}body{font-size:17px}}
 </style>
 </head>
 <body>
-<main>
-<h1>Webs sobre autismo en español</h1>
-<p class="lead">Selección de portales, organizaciones, blogs y herramientas sobre el trastorno del espectro del autismo (TEA) para familias, personas autistas y profesionales.</p>
-<input id="q" type="search" placeholder="Buscar (ej. comunicación, Chile, blog, pictogramas)…" aria-label="Buscar">
+<header class="top"><nav aria-label="Principal">
+<strong>Guía sobre autismo</strong>
+<a href="#que-es">Qué es</a><a href="#senales">Señales</a><a href="#diagnostico">Diagnóstico</a><a href="#familias">Familias</a><a href="#educacion">Educación</a><a href="#adultos">Vida adulta</a><a href="#comunicacion">Comunicación</a><a href="recursos.html">Recursos</a>
+</nav></header>
 
-<div id="list"></div>
+<div class="hero"><div class="wrap">
+<h1>Entender el autismo, en español</h1>
+<p>Una guía clara y divulgativa para personas autistas, familias, docentes y cualquiera que quiera saber más sobre el trastorno del espectro del autismo (TEA).</p>
+<a class="btn" href="#que-es">Empezar a leer</a>
+</div></div>
 
-<footer>
-<p>Enlaces comprobados en septiembre de 2026. Esta selección es orientativa y no sustituye el consejo de profesionales sanitarios. ¿Falta alguna web? Sugiérela abriendo un <em>issue</em> en el repositorio.</p>
-</footer>
+<main class="wrap">
+
+<section id="que-es">
+<h2>Qué es el autismo</h2>
+<p>El autismo es una condición del neurodesarrollo. Significa que el cerebro se desarrolla y procesa la información de una forma distinta a la más habitual. Acompaña a la persona toda la vida y no es una enfermedad que se cure.</p>
+<p>Se habla de <strong>espectro</strong> porque cada persona autista es diferente: algunas necesitan mucho apoyo en su día a día y otras viven de forma bastante independiente. Además, una misma persona puede necesitar más o menos apoyo según el momento y el entorno.</p>
+<h3>Características más habituales</h3>
+<ul>
+<li><strong>Comunicación e interacción social:</strong> diferencias al iniciar o mantener conversaciones, interpretar el lenguaje no verbal, entender ironías o dobles sentidos, o hacer amistades.</li>
+<li><strong>Intereses y conductas repetitivas:</strong> preferencia por rutinas, dificultad ante los cambios inesperados, movimientos repetitivos o intereses muy intensos y profundos.</li>
+<li><strong>Diferencias sensoriales:</strong> mayor o menor sensibilidad a sonidos, luces, texturas, olores o sabores.</li>
+</ul>
+<div class="note">El autismo no tiene relación con las vacunas ni con la crianza. Es una condición con un fuerte componente genético.</div>
+</section>
+
+<section id="senales">
+<h2>Señales que pueden hacer pensar en autismo</h2>
+<p>Las señales suelen notarse en los primeros años de vida, aunque en algunas personas, sobre todo niñas, mujeres y personas con un lenguaje muy desarrollado, pasan desapercibidas hasta la adolescencia o la edad adulta.</p>
+<div class="cards">
+<div class="card"><h3>En bebés y niños pequeños</h3><ul>
+<li>Responde poco cuando lo llaman por su nombre</li>
+<li>Comparte poco la atención: señalar, mostrar objetos</li>
+<li>Retraso o pérdida de habilidades del lenguaje</li>
+<li>Juego repetitivo o poco simbólico</li></ul></div>
+<div class="card"><h3>En edad escolar</h3><ul>
+<li>Dificultad para entender normas sociales no escritas</li>
+<li>Malestar ante cambios de rutina</li>
+<li>Intereses muy intensos en un tema concreto</li>
+<li>Sobrecarga en ambientes ruidosos</li></ul></div>
+<div class="card"><h3>En adolescentes y adultos</h3><ul>
+<li>Agotamiento tras mucha interacción social</li>
+<li>Esfuerzo por «imitar» a los demás para encajar</li>
+<li>Ansiedad o depresión sin explicación clara</li>
+<li>Sensación de sentirse diferente desde siempre</li></ul></div>
+</div>
+<div class="note">Tener alguna de estas señales <strong>no significa</strong> que una persona sea autista. Solo un diagnóstico profesional puede confirmarlo.</div>
+</section>
+
+<section id="diagnostico">
+<h2>Cómo se llega a un diagnóstico</h2>
+<p>El diagnóstico lo realiza un equipo de profesionales con experiencia en autismo, como psicólogos, psiquiatras, neuropediatras o logopedas. No existe una prueba médica única: se basa en la observación, entrevistas con la familia y pruebas específicas.</p>
+<h3>Pasos habituales</h3>
+<ol>
+<li><strong>Consulta con el pediatra o el médico de familia,</strong> que puede aplicar un cribado inicial y derivar a un especialista.</li>
+<li><strong>Evaluación especializada</strong> del desarrollo, la comunicación y la conducta.</li>
+<li><strong>Informe diagnóstico</strong> con las fortalezas de la persona y las necesidades de apoyo.</li>
+<li><strong>Plan de apoyos</strong> en la salud, la educación y la vida diaria.</li>
+</ol>
+<p>Una detección temprana ayuda a que los apoyos lleguen antes. Aun así, nunca es tarde para pedir una valoración: cada vez más personas reciben su diagnóstico siendo adultas.</p>
+<div class="note">Los servicios públicos y los plazos varían según el país y la región. Consulta en tu sistema de salud local y con las asociaciones de autismo de tu zona.</div>
+</section>
+
+<section id="familias">
+<h2>Apoyo a las familias</h2>
+<p>Recibir un diagnóstico puede traer alivio, dudas y mucha información a la vez. Estas ideas pueden ayudar en los primeros pasos:</p>
+<ul>
+<li><strong>Tómate tu tiempo.</strong> No hace falta entenderlo todo el primer día.</li>
+<li><strong>Conoce a tu hijo o hija:</strong> qué le gusta, qué le agobia y cómo se comunica.</li>
+<li><strong>Usa apoyos visuales</strong> como agendas con pictogramas para anticipar lo que va a pasar.</li>
+<li><strong>Busca una asociación.</strong> Las familias que ya han pasado por lo mismo son un apoyo valiosísimo.</li>
+<li><strong>Cuida de ti.</strong> Descansar y pedir ayuda también es cuidar.</li>
+<li><strong>Escucha a las personas autistas adultas.</strong> Sus testimonios ofrecen una perspectiva muy útil.</li>
+</ul>
+<p>En la página de <a href="recursos.html">recursos</a> encontrarás asociaciones, blogs y portales de referencia en español.</p>
+</section>
+
+<section id="educacion">
+<h2>Educación y escuela</h2>
+<p>Una escuela inclusiva se adapta al alumno, no al revés. Algunas medidas que suelen funcionar:</p>
+<ul>
+<li>Rutinas previsibles y avisos anticipados de los cambios.</li>
+<li>Instrucciones cortas, claras y, si hace falta, apoyadas con imágenes.</li>
+<li>Espacios tranquilos a los que retirarse cuando hay sobrecarga sensorial.</li>
+<li>Aprovechar los intereses del alumno como motor de aprendizaje.</li>
+<li>Coordinación constante entre familia, tutoría y equipo de orientación.</li>
+<li>Formación del profesorado y sensibilización de los compañeros.</li>
+</ul>
+<div class="note">Los derechos y los recursos de apoyo escolar dependen de la legislación de cada país. Pide información al centro y a las asociaciones.</div>
+</section>
+
+<section id="adultos">
+<h2>Vida adulta, trabajo y bienestar</h2>
+<p>Las personas autistas pueden estudiar, trabajar, tener pareja y formar una familia, con los apoyos adecuados. Muchas barreras no vienen de la persona, sino del entorno.</p>
+<h3>Trabajo</h3>
+<p>Las entrevistas basadas en preguntas indirectas, los ambientes muy ruidosos y las normas no explícitas pueden ser un obstáculo. Ayudan las descripciones claras del puesto, el tiempo para adaptarse y los ajustes razonables, como un espacio más tranquilo o un horario flexible.</p>
+<h3>Salud mental</h3>
+<p>La ansiedad y la depresión son más frecuentes en las personas autistas, sobre todo cuando no reciben apoyo o tienen que ocultar su forma de ser. Pedir ayuda a profesionales con formación en autismo marca la diferencia.</p>
+<h3>Autonomía</h3>
+<p>Aprender a gestionar tareas cotidianas, el dinero o el transporte se puede trabajar paso a paso, con apoyos personalizados.</p>
+</section>
+
+<section id="comunicacion">
+<h2>Comunicación</h2>
+<p>No todas las personas autistas usan el lenguaje oral, y las que lo usan no siempre lo emplean del mismo modo. Existen los <strong>sistemas aumentativos y alternativos de comunicación (SAAC)</strong>, que complementan o sustituyen el habla: pictogramas, tableros, aplicaciones o lengua de signos.</p>
+<h3>Consejos para comunicarse mejor</h3>
+<ul>
+<li>Habla de forma clara y concreta, evita metáforas y dobles sentidos.</li>
+<li>Da tiempo para responder sin presionar.</li>
+<li>Acompaña la información con apoyos visuales.</li>
+<li>Respeta las formas de comunicación de la persona: no todas pasan por mirar a los ojos.</li>
+</ul>
+<p>El portal <a href="https://www.arasaac.org/" rel="noopener">ARASAAC</a> ofrece pictogramas gratuitos para elaborar materiales.</p>
+</section>
+
+<section id="fuentes">
+<h2>Fuentes de referencia</h2>
+<p>Esta guía es divulgativa y está escrita con carácter orientativo. Para profundizar, consulta:</p>
+<ul>
+<li><a href="https://autismo.org.es/" rel="noopener">Confederación Autismo España</a></li>
+<li><a href="https://www.who.int/es/news-room/fact-sheets/detail/autism-spectrum-disorders" rel="noopener">Organización Mundial de la Salud: trastornos del espectro autista</a></li>
+<li><a href="https://www.autismeurope.org/" rel="noopener">Autismo Europa</a></li>
+<li><a href="recursos.html">Directorio completo de webs sobre autismo en español</a></li>
+</ul>
+</section>
+
 </main>
 
-<script>
-const data=[
-{t:"Organizaciones y entidades de referencia",items:[
-["Autismo España","https://autismo.org.es/","Confederación estatal que agrupa a unas 70 entidades. Información, publicaciones y campus de formación.","España"],
-["Autismo Europa","https://www.autismeurope.org/","Organización que defiende los derechos de las personas autistas y sus familias en Europa.","Europa"],
-["FESPAU","https://fespau.es/","Federación Española de Autismo: red de asociaciones y recursos.","España"],
-["Fundación ConecTEA","https://www.fundacionconectea.org/","Trabaja por la inclusión, el apoyo y la visibilización de las personas con TEA.","España"],
-["Autismo Madrid","https://www.autismomadrid.es/","Entidad con servicios, formación y materiales divulgativos.","España"],
-["Autismo Ávila","https://www.autismoavila.org/","Asociación con recursos y actividades para familias.","España"],
-["Autismo Burgos","https://www.autismoburgos.es/","Asociación con servicios y publicaciones.","España"],
-["Fundación TEAutismo","https://www.fundacionteautismo.cl/","Acompaña a familias y comunidades educativas de Antofagasta.","Chile"],
-["FUAN","https://fuan.cl/","Fundación Unión Autismo y Neurodiversidad: apoyo y herramientas para familias.","Chile"]]},
-{t:"Información y noticias",items:[
-["Autismo Diario","https://www.autismodiario.com/","Uno de los diarios digitales más veteranos en español sobre autismo: noticias, investigación y opinión.","Noticias"],
-["Autismo.com.es","https://www.autismo.com.es/","Portal divulgativo con información general sobre el TEA.","Información"],
-["Organización Mundial de la Salud: autismo","https://www.who.int/es/news-room/fact-sheets/detail/autism-spectrum-disorders","Ficha informativa oficial sobre los trastornos del espectro autista.","Información"],
-["CDC: autismo (en español)","https://www.cdc.gov/autism/es/","Información oficial sobre signos, diagnóstico y recursos.","Información"],
-["Autism Navigator","https://autismnavigator.com/","Recursos de detección y atención temprana en varios idiomas, con vídeos.","Detección temprana"]]},
-{t:"Comunicación, pictogramas y materiales",items:[
-["ARASAAC","https://www.arasaac.org/","Portal aragonés de comunicación aumentativa: pictogramas gratuitos y herramientas para crear materiales.","Pictogramas"],
-["Soy Visual","https://www.soyvisual.org/","Fotografías, láminas y materiales visuales para comunicación y rutinas.","Apoyos visuales"],
-["Aulautista","https://www.aulautista.com/","Espacio para mantenerse informado sobre los trastornos del espectro del autismo.","Educación"],
-["autismo TEAyudo","https://www.autismoteayudo.com/","Recursos y directorio de enlaces sobre autismo.","Enlaces"]]},
-{t:"Blogs y experiencias de familias",items:[
-["Amando al TEA","https://amandoaltea.com/","Experiencias de familias y opiniones de profesionales.","Blog"],
-["Blog del Autismo (Gatea)","https://gatea.org/blog-autismo/","Artículos y entrevistas a profesionales del sector.","Blog"]]}
-];
-const list=document.getElementById('list'),q=document.getElementById('q');
-const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-list.innerHTML=data.map(g=>`<section><h2>${esc(g.t)}</h2><div class="grid">`+g.items.map(([n,u,d,tag])=>
-`<div class="card" data-s="${esc((n+' '+d+' '+tag).toLowerCase())}"><a href="${u}" target="_blank" rel="noopener noreferrer">${esc(n)}</a><p>${esc(d)}</p><span class="tag">${esc(tag)}</span></div>`).join('')+`</div></section>`).join('');
-q.addEventListener('input',()=>{const v=q.value.toLowerCase().trim();
-document.querySelectorAll('.card').forEach(c=>c.hidden=v&&!c.dataset.s.includes(v));
-document.querySelectorAll('section').forEach(s=>s.hidden=!s.querySelector('.card:not([hidden])'));});
-</script>
+<div class="wrap"><footer>
+<p>Contenido original de carácter informativo. No sustituye la valoración de profesionales sanitarios, educativos o legales. Proyecto independiente, sin vinculación con ninguna de las organizaciones enlazadas.</p>
+</footer></div>
 </body>
 </html>

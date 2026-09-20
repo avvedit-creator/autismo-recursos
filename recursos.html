@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recursos y webs sobre autismo en español</title>
+<meta name="description" content="Selección de las mejores webs sobre autismo (TEA) en español: organizaciones, información, comunicación aumentativa, blogs y recursos para familias y profesionales.">
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2933;--muted:#5b6770;--card:#fff;--line:#e4e1d8;--accent:#2a6f97;--accent-bg:#e6f0f6}
+@media (prefers-color-scheme:dark){:root{--bg:#161a1d;--fg:#e6e9ec;--muted:#9aa5ae;--card:#1f2428;--line:#2e353b;--accent:#7fb8dc;--accent-bg:#1d2b35}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:920px;margin:0 auto;padding:32px 16px 56px}
+h1{font-size:2rem;margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 24px}
+input{width:100%;padding:12px 14px;font:inherit;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg)}
+h2{font-size:1.25rem;margin:36px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card a{color:var(--accent);font-weight:600;text-decoration:none}
+.card a:hover,.card a:focus{text-decoration:underline}
+.card p{margin:6px 0 8px;font-size:.95rem}
+.tag{display:inline-block;font-size:.75rem;background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:99px}
+footer{margin-top:40px;color:var(--muted);font-size:.9rem}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main>
+<p><a href="./">← Volver al inicio</a></p>
+<h1>Webs sobre autismo en español</h1>
+<p class="lead">Selección de portales, organizaciones, blogs y herramientas sobre el trastorno del espectro del autismo (TEA) para familias, personas autistas y profesionales.</p>
+<input id="q" type="search" placeholder="Buscar (ej. comunicación, Chile, blog, pictogramas)…" aria-label="Buscar">
+
+<div id="list"></div>
+
+<footer>
+<p>Enlaces comprobados en septiembre de 2026. Esta selección es orientativa y no sustituye el consejo de profesionales sanitarios. ¿Falta alguna web? Sugiérela abriendo un <em>issue</em> en el repositorio.</p>
+</footer>
+</main>
+
+<script>
+const data=[
+{t:"Organizaciones y entidades de referencia",items:[
+["Autismo España","https://autismo.org.es/","Confederación estatal que agrupa a unas 70 entidades. Información, publicaciones y campus de formación.","España"],
+["Autismo Europa","https://www.autismeurope.org/","Organización que defiende los derechos de las personas autistas y sus familias en Europa.","Europa"],
+["FESPAU","https://fespau.es/","Federación Española de Autismo: red de asociaciones y recursos.","España"],
+["Fundación ConecTEA","https://www.fundacionconectea.org/","Trabaja por la inclusión, el apoyo y la visibilización de las personas con TEA.","España"],
+["Autismo Madrid","https://www.autismomadrid.es/","Entidad con servicios, formación y materiales divulgativos.","España"],
+["Autismo Ávila","https://www.autismoavila.org/","Asociación con recursos y actividades para familias.","España"],
+["Autismo Burgos","https://www.autismoburgos.es/","Asociación con servicios y publicaciones.","España"],
+["Fundación TEAutismo","https://www.fundacionteautismo.cl/","Acompaña a familias y comunidades educativas de Antofagasta.","Chile"],
+["FUAN","https://fuan.cl/","Fundación Unión Autismo y Neurodiversidad: apoyo y herramientas para familias.","Chile"]]},
+{t:"Información y noticias",items:[
+["Autismo Diario","https://www.autismodiario.com/","Uno de los diarios digitales más veteranos en español sobre autismo: noticias, investigación y opinión.","Noticias"],
+["Autismo.com.es","https://www.autismo.com.es/","Portal divulgativo con información general sobre el TEA.","Información"],
+["Organización Mundial de la Salud: autismo","https://www.who.int/es/news-room/fact-sheets/detail/autism-spectrum-disorders","Ficha informativa oficial sobre los trastornos del espectro autista.","Información"],
+["CDC: autismo (en español)","https://www.cdc.gov/autism/es/","Información oficial sobre signos, diagnóstico y recursos.","Información"],
+["Autism Navigator","https://autismnavigator.com/","Recursos de detección y atención temprana en varios idiomas, con vídeos.","Detección temprana"]]},
+{t:"Comunicación, pictogramas y materiales",items:[
+["ARASAAC","https://www.arasaac.org/","Portal aragonés de comunicación aumentativa: pictogramas gratuitos y herramientas para crear materiales.","Pictogramas"],
+["Soy Visual","https://www.soyvisual.org/","Fotografías, láminas y materiales visuales para comunicación y rutinas.","Apoyos visuales"],
+["Aulautista","https://www.aulautista.com/","Espacio para mantenerse informado sobre los trastornos del espectro del autismo.","Educación"],
+["autismo TEAyudo","https://www.autismoteayudo.com/","Recursos y directorio de enlaces sobre autismo.","Enlaces"]]},
+{t:"Blogs y experiencias de familias",items:[
+["Amando al TEA","https://amandoaltea.com/","Experiencias de familias y opiniones de profesionales.","Blog"],
+["Blog del Autismo (Gatea)","https://gatea.org/blog-autismo/","Artículos y entrevistas a profesionales del sector.","Blog"]]}
+];
+const list=document.getElementById('list'),q=document.getElementById('q');
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+list.innerHTML=data.map(g=>`<section><h2>${esc(g.t)}</h2><div class="grid">`+g.items.map(([n,u,d,tag])=>
+`<div class="card" data-s="${esc((n+' '+d+' '+tag).toLowerCase())}"><a href="${u}" target="_blank" rel="noopener noreferrer">${esc(n)}</a><p>${esc(d)}</p><span class="tag">${esc(tag)}</span></div>`).join('')+`</div></section>`).join('');
+q.addEventListener('input',()=>{const v=q.value.toLowerCase().trim();
+document.querySelectorAll('.card').forEach(c=>c.hidden=v&&!c.dataset.s.includes(v));
+document.querySelectorAll('section').forEach(s=>s.hidden=!s.querySelector('.card:not([hidden])'));});
+</script>
+</body>
+</html>
